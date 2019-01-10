@@ -62,7 +62,9 @@ import { ModalWidgetComponent } from './modal-widget/modal-widget.component';
 import { WidgetSwitchComponent } from './widget-switch/widget-switch.component'
 import { ModalPathSelectorComponent } from './modal-path-selector/modal-path-selector.component';
 import { ModalUnitSelectorComponent } from './modal-unit-selector/modal-unit-selector.component';
-import { ObjectKeysPipe } from './object-keys.pipe'
+import { ObjectKeysPipe } from './object-keys.pipe';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment'
 
 
 const appRoutes: Routes = [
@@ -124,7 +126,8 @@ const appRoutes: Routes = [
     MatRadioModule,
     MatTabsModule,
     MatStepperModule,
-    MatInputModule
+    MatInputModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   entryComponents: [ 
     WidgetUnknownComponent, 
